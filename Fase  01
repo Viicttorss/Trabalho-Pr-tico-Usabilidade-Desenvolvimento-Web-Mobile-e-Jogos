@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Estudante</title>
+</head>
+<body>
+    <div>
+        <h1>Victor de Souza Silva </h1>
+        <img src="https://avatars.githubusercontent.com/u/209710538?s=400&u=aa125b536c90e902d810adad62f714349f2a3f92&v=4" alt="Foto de Perfil">
+        <div>
+            <p><strong>RA:</strong> 32120335</p>
+            <p><strong>Curso e Período Atual:</strong> Ciência da Computação - 8º Período</p>
+            <p><strong>Endereço:</strong> Rua Dois, Número 495, Bairro Severina, Ribeirão das Neves</p>
+            <p><strong>E-mail:</strong> viicttorss@gmail.com</p>
+            <p><strong>UCs Cursadas:</strong> Ambientes Computacionais e Conectividade, Análise de Dados e Big Data, Computação Gráfica e Realidade Virtual, Estruturas de Dados e Análise de Algoritmos, Estruturas Matemáticas, Gestão e Qualidade de Software, Inovação, Sustentabilidade e Competitividade Empresarial, Inteligência Artificial, Modelagem de Software, Modelos, Métodos e Técnicas da Engenharia de Software, Programação de Soluções Computacionais, Sistemas Computacionais e Segurança, Teoria da Computação e Compiladores, Core: Português e Libras.</p>
+            <p><strong>Perfil Pessoal:</strong> No meu tempo livre, gosto de assistir séries, jogar videogame, e ir à jogos do meu time.</p>
+            <p><strong>Perfil Acadêmico:</strong> Sou atualmente coordenador de projetos, mas já trabalhei como analista de testes a nivel Pleno.</p>
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/viictorss/" target="_blank">Meu LinkedIn</a></p>
+        </div>
+    </div>
+</body>
+</html>
