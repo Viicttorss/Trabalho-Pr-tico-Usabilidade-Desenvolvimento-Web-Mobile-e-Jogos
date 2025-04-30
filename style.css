@@ -1,7 +1,7 @@
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom, #070000, #071906);
-  color: #e0e1dd;
+  background-color: #1b263b;
+  color: white;
   margin: 0;
   padding: 20px;
 }
@@ -9,14 +9,10 @@ body {
 .container {
   max-width: 700px;
   margin: auto;
-  background-color: #071906;
-  padding: 20px;
-  border-radius: 10px;
-  border: 1px solid #12300d;
 }
 
 h1 {
-  color: #133f0f;
+  color: #89c2d9;
   text-align: center;
 }
 
@@ -25,14 +21,9 @@ img {
   margin: 20px auto;
   width: 150px;
   border-radius: 50%;
-  border: 2px solid #144914;
 }
 
 a {
-  color: #144914;
-  text-decoration: none;
+  color: #a9d6e5;
 }
 
-a:hover {
-  text-decoration: underline;
-}
