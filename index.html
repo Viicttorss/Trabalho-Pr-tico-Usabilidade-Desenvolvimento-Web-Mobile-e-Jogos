@@ -1,28 +1,111 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Perfil do Estudante</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Perfil do Aluno</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
+
+    
+    <img src="https://avatars.githubusercontent.com/u/209710538?s=400&u=aa125b536c90e902d810adad62f714349f2a3f92&v=4" alt="Foto Secundária" onclick="openModal(this.src)">
+
     <h1>Victor de Souza Silva</h1>
-    <img
-      src="https://avatars.githubusercontent.com/u/209710538?s=400&u=aa125b536c90e902d810adad62f714349f2a3f92&v=4"
-      alt="Foto de Perfil"
-    />
-    <div class="info">
-      <p><strong>RA:</strong> 32120335</p>
-      <p><strong>Curso e Período Atual:</strong> Ciência da Computação - 8º Período</p>
-      <p><strong>Endereço:</strong> Rua Dois, Número 495, Bairro Severina, Ribeirão das Neves</p>
-      <p><strong>E-mail:</strong> viicttorss@gmail.com</p>
-      <p><strong>UCs Cursadas:</strong> Ambientes Computacionais e Conectividade, Análise de Dados e Big Data, Computação Gráfica e Realidade Virtual, Estruturas de Dados e Análise de Algoritmos, Estruturas Matemáticas, Gestão e Qualidade de Software, Inovação, Sustentabilidade e Competitividade Empresarial, Inteligência Artificial, Modelagem de Software, Modelos, Métodos e Técnicas da Engenharia de Software, Programação de Soluções Computacionais, Sistemas Computacionais e Segurança, Teoria da Computação e Compiladores, Core: Português e Libras.</p>
-      <p><strong>Perfil Pessoal:</strong> No meu tempo livre, gosto de assistir séries, jogar videogame, e ir à jogos do meu time.</p>
-      <p><strong>Perfil Acadêmico:</strong> Sou atualmente coordenador de projetos, mas já trabalhei como analista de testes a nível Pleno.</p>
-      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/viictorss/" target="_blank">Meu LinkedIn</a></p>
-    </div>
+
+    <p><strong>RA:</strong> 32120335</p>
+    <p><strong>Curso:</strong> Ciência da Computação - 8º Período</p>
+    <p><strong>Endereço:</strong> Rua Dois, 495, Ribeirão das Neves</p>
+
+    <p><strong>CPF:</strong> <input type="text" id="cpf" placeholder="000.000.000-00"> <span id="cpf-error" class="error"></span></p>
+    <p><strong>E-mail:</strong> <input type="text" id="email" placeholder="viicttorss@gmail.com"> <span id="email-error" class="error"></span></p>
+
+    <p><strong>Perfil Pessoal:</strong> Gosto de assistir séries, jogar videogame e ir a jogos do meu time.</p>
+    <input type="text" id="novaDescricao" placeholder="Nova informação pessoal">
+    <button onclick="adicionarDescricao()">Adicionar</button>
+    <ul id="mais-info"></ul>
+
+    <p><strong>UCs Cursadas:</strong></p>
+    <ul id="uc-list">
+      <li>Core: Português e libras <button onclick="mover(this,-1)">↑</button><button onclick="mover(this,1)">↓</button></li>
+      <li>Estruturas matemáticas <button onclick="mover(this,-1)">↑</button><button onclick="mover(this,1)">↓</button></li>
+      <li>Ambientes computacionais e conectividade <button onclick="mover(this,-1)">↑</button><button onclick="mover(this,1)">↓</button></li>
+      <li>Estruturas de dados e análise de algoritmos <button onclick="mover(this,-1)">↑</button><button onclick="mover(this,1)">↓</button></li>
+      <li>Programação de soluções computacionais <button onclick="mover(this,-1)">↑</button><button onclick="mover(this,1)">↓</button></li>
+      <li>Modelagem de software <button onclick="mover(this,-1)">↑</button><button onclick="mover(this,1)">↓</button></li>
+      <li>Modelos, métodos e técnicas da engenharia de software <button onclick="mover(this,-1)">↑</button><button onclick="mover(this,1)">↓</button></li>
+      <li>Gestão e qualidade de software <button onclick="mover(this,-1)">↑</button><button onclick="mover(this,1)">↓</button></li>
+      <li>Inovação, sustentabilidade e competitividade empresarial <button onclick="mover(this,-1)">↑</button><button onclick="mover(this,1)">↓</button></li>
+      <li>Computação gráfica e realidade virtual <button onclick="mover(this,-1)">↑</button><button onclick="mover(this,1)">↓</button></li>
+      <li>Análise de dados e big data <button onclick="mover(this,-1)">↑</button><button onclick="mover(this,1)">↓</button></li>
+      <li>Inteligência Artificial <button onclick="mover(this,-1)">↑</button><button onclick="mover(this,1)">↓</button></li>
+      <li>Sistemas computacionais e segurança <button onclick="mover(this,-1)">↑</button><button onclick="mover(this,1)">↓</button></li>
+      <li>Teoria da computação e compiladores <button onclick="mover(this,-1)">↑</button><button onclick="mover(this,1)">↓</button></li>
+      <li>Gestão de operações e serviços públicos <button onclick="mover(this,-1)">↑</button><button onclick="mover(this,1)">↓</button></li>
+    </ul>
+    <button onclick="adicionarUC()">Adicionar UC</button>
+
+    <p><strong>Perfil Acadêmico:</strong> Sou coordenador de projetos, com experiência anterior como analista de testes nível pleno.</p>
+    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/viictorss/" style="color:#a9d6e5;">Meu perfil</a></p>
+
   </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" onclick="closeModal()">
+    <img id="modal-img" src="">
+  </div>
+
+  <script>
+    function adicionarDescricao() {
+      const txt = document.getElementById("novaDescricao").value;
+      if (txt.trim()) {
+        const li = document.createElement("li");
+        li.textContent = txt;
+        document.getElementById("mais-info").appendChild(li);
+        document.getElementById("novaDescricao").value = "";
+      }
+    }
+
+    function adicionarUC() {
+      const uc = prompt("Nome da UC:");
+      if (uc) {
+        const li = document.createElement("li");
+        li.innerHTML = uc + " <button onclick='mover(this,-1)'>↑</button><button onclick='mover(this,1)'>↓</button>";
+        document.getElementById("uc-list").appendChild(li);
+      }
+    }
+
+    function mover(btn, dir) {
+      const li = btn.parentElement;
+      const ul = li.parentElement;
+      const itens = Array.from(ul.children);
+      const i = itens.indexOf(li);
+      const j = i + dir;
+      if (j >= 0 && j < itens.length) {
+        ul.insertBefore(li, dir === 1 ? itens[j].nextSibling : itens[j]);
+      }
+    }
+
+    function openModal(src) {
+      document.getElementById("modal-img").src = src;
+      document.getElementById("modal").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+
+    document.getElementById("cpf").addEventListener("blur", () => {
+      const cpf = document.getElementById("cpf").value;
+      const erro = document.getElementById("cpf-error");
+      erro.textContent = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/.test(cpf) ? "" : "CPF inválido. Máscara obrigatória: 000.000.000-00.";
+    });
+
+    document.getElementById("email").addEventListener("blur", () => {
+      const email = document.getElementById("email").value;
+      const erro = document.getElementById("email-error");
+      erro.textContent = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ? "" : "E-mail inválido.";
+    });
+  </script>
 </body>
 </html>
